@@ -1,0 +1,71 @@
+{
+  "name": "ice-bolt",
+  "version": "1.0.0",
+  "private": false,
+  "author": "Aloy Nora",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "npm run clean && npm run build:esm && npm run build:umd",
+    "test": "vue-cli-service test:unit",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "lint": "vue-cli-service lint --max-warnings 5",
+    "build:esm": "rollup --config build/rollup.esm.config.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js",
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "prepare": "husky"
+  },
+  "main": "dist/ice-bolt.umd.js",
+  "module": "dist/ice-bolt.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "lodash-es": "^4.17.20"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@types/jest": "^27.0.1",
+    "@types/lodash-es": "^4.17.12",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-0",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "babel-jest": "^27.0.6",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^9.1.7",
+    "jest": "^27.0.5",
+    "rimraf": "^6.0.1",
+    "rollup": "^2.38.5",
+    "rollup-plugin-css-only": "3.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "ts-jest": "^27.0.4",
+    "typescript": "~4.3.5",
+    "vue": "^3.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "homepage": "https://github.com/aloy-nora/ice-bolt",
+  "keywords": [
+    "Component",
+    "UI",
+    "Vue3"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloy-nora/ice-bolt.git"
+  },
+  "types": "dist/index.d.ts"
+}
